@@ -1,0 +1,68 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #f4f9ff;
+	height: 800px;
+	overflow-y:hidden;
+}
+* {
+	margin: 0;
+	padding: 0;
+}
+ul {
+	list-style-type: none;
+}
+.food_class {
+
+	height: 100%;
+	margin-left: 170px;
+	margin-top: 20px;
+}
+.food_class .food_item {
+	width: 100%;
+}
+.food_class .food_item .food_item_list {
+	width: 270px;
+	height: 160px;
+	float: left;
+	margin-right: 100px;
+	margin-top: 60px;
+	border-radius: 5px;
+	background-color: #e2edbe;
+	color: #000;
+	font-size: 40px;
+	text-align: center;
+	line-height: 160px;
+}
+.food_class .food_item .two {
+	width: 270px;
+	height: 160px;
+	float: left;
+	margin-right: 100px;
+	margin-top: 60px;
+	border-radius: 5px;
+	background-color: #ccc;
+	color: #000;
+	font-size: 40px;
+	text-align: center;
+	line-height: 160px;
+}
+.food_class .food_item .food_item_list.active {
+	background-color: #58a0fd;
+}
+.food_class .food_item .food_item_list.si, .food_class .food_item .food_item_list.wu, .food_class .food_item .food_item_list.liu {
+	margin-top: 130px;
+}
+.food_class .food_item .food_item_list.san, .food_class .food_item .food_item_list.liu {
+	margin-right: 0;
+}
+.clearfix {
+	clear: both;
+}
+.food_class .food_item {
+	width: 1130px;
+	margin: 0 auto;
+}
+.grzx_a:hover dropdown_box {
+	display: block;

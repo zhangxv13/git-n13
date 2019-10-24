@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CropDao">
+	<resultMap type="bean.Species" id="SpeResultMap">
+		<id column="crop_sid" jdbcType="INTEGER" property="id"/>
+		<result column="crop_species" jdbcType="VARCHAR" property="cropSpecies"/>
+		<result column="crop_category_id" jdbcType="INTEGER" property="catgoryid"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<resultMap type="bean.CropCategory" id="CateResultMap">
+		<id column="id" jdbcType="INTEGER" property="id"/>
+		<result column="crop_category" jdbcType="VARCHAR" property="cropCategory"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<select id="findSpecies" resultMap="SpeResultMap">
+		select * from crop_species
+	</select>
+	<select id="findAllCategory" resultMap="CateResultMap">
+		select * from crop_category
+	</select>
+	<delete id="deletecategory">
+		delete from crop_category where id = #{id}
+	</delete>
+	<select id="isexist" resultMap="CateResultMap">
+		select * from crop_category where crop_category=#{name}
+	</select>
+	<select id="isexitsp" resultMap="SpeResultMap">
+		select * from crop_species where crop_species=#{name}
+	</select>
+	<select id="showcategory" resultMap="CateResultMap">
+		select * from crop_category where id=#{id}
+	</select>
+	<select id="showspecies" resultMap="SpeResultMap">
+		select * from crop_species where crop_category_id=#{id}
+	</select>
+	<select id="selectonesp" resultMap="SpeResultMap">
+		select * from crop_species where crop_sid=#{id}
+	</select>
+	<insert id="addcate" parameterType="bean.CropCategory" useGeneratedKeys="true">
+		insert into crop_category values(null,#{cropCategory},#{state})
+	</insert>
+	<update id="updatecategory" parameterType="bean.CropCategory">
+		update crop_category 
+			<set>
+				<if test="cropCategory!=null">
+					crop_category=#{cropCategory},
+				</if>
+				<if test="state!=null">
+					state=#{state}
+				</if>
+				where id=#{id}
+			</set>
+	</update>
+	<insert id="addspecie" parameterType="bean.Species" useGeneratedKeys="true">
+		insert into crop_species values(null,#{cropSpecies},#{catgoryid},#{state})
+	</insert>
+	<delete id="deletespecie" >
+		delete from crop_species where crop_sid = #{id}
+	</delete>
+	<update id="updatespcies" parameterType="bean.Species">
+		update crop_species 
+			<set>
+				<if test="cropSpecies!=null">
+					crop_species=#{cropSpecies},
+				</if>
+				<if test="catgoryid!=null">
+					crop_category_id=#{catgoryid},
+				</if>
+				<if test="state!=null">
+					state=#{state}
+				</if>
+				where crop_sid=#{id}
+			</set>
+	</update>
+</mapper>

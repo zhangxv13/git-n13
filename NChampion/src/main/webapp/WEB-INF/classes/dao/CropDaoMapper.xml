@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.CropDao">
+	<resultMap type="bean.Species" id="SpeResultMap">
+		<id column="crop_sid" jdbcType="INTEGER" property="id"/>
+		<result column="crop_species" jdbcType="VARCHAR" property="cropSpecies"/>
+		<result column="crop_category_id" jdbcType="INTEGER" property="catgoryid"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<resultMap type="bean.CropCategory" id="CateResultMap">
+		<id column="id" jdbcType="INTEGER" property="id"/>
+		<result column="crop_category" jdbcType="VARCHAR" property="cropCategory"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<select id="findSpecies" resultMap="SpeResultMap">
+		select * from crop_species
+	</select>
+	<select id="findAllCategory" resultMap="CateResultMap">
+		select * from crop_category
+	</select>
+</mapper>

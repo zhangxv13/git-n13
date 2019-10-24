@@ -1,0 +1,296 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+html, body {
+	height: 100%;
+}
+body {
+	min-width: 1200px;
+	margin: 0px;
+}
+.title {
+	width: 100%;
+	background: #58a0fd;
+	height: 100px;
+}
+.title .tit {
+	opacity: 1;
+	background: none;
+}
+.title .logo {
+	text-align: center;
+	display: inline-block;
+	float: left;
+	width: 240px;
+	height: 100px;
+	font-size: 18px;
+	line-height: 100px;
+	background: #549efd;
+	color: #fff;
+}
+.quit {
+	display: inline-block;
+	float: right;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+	color: #fff;
+	line-height: 100px;
+	background: #58a0fd url(../../static/img/quit.png) no-repeat 70px 42px;
+}
+.xx {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 140px;
+	height: 80px;
+	padding-top: 20px;
+	line-height: 100px;
+	color: #fff;
+	background: #58a0fd url(../../static/img/yh.png) no-repeat 63px 28px;
+}
+.qx {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 140px;
+	height: 80px;
+	padding-top: 20px;
+	line-height: 100px;
+	color: #fff;
+	background: #58a0fd url(../../static/img/xx.png) no-repeat 63px 28px;
+}
+.kh {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 140px;
+	height: 80px;
+	padding-top: 20px;
+	line-height: 100px;
+	color: #fff;
+	background: #58a0fd url(../../static/img/qx.png) no-repeat 63px 28px;
+}
+.gl {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 140px;
+	height: 80px;
+	line-height: 100px;
+	padding-top: 20px;
+	color: #fff;
+	background: #58a0fd url(../../static/img/khgl.png) no-repeat 63px 28px;
+}
+.gr {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	width: 140px;
+	height: 80px;
+	line-height: 100px;
+	padding-top: 20px;
+	color: #fff;
+	background: #58a0fd url(../../static/img/dat.png) no-repeat 63px 28px;
+}
+.hea {
+	height: 63px;
+	line-height: 63px;
+	text-align: center;
+	font-size: 33px;
+	color: #fff;
+	background: #73b0ff;
+}
+.title a:hover {
+	background-color: #3986e8;
+}
+.active {
+	
+}
+.xtgl {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #c0dafb;
+}
+.xtgl a {
+	display: inline-block;
+	width: 107px;
+	color: #6983b9;
+}
+.xtgl .dactive {
+	color: #58a0fd;
+	background: url(../../static/img/data.png) no-repeat 3px 17px;
+}
+.xtgl1 {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #c0dafb;
+	display: block;
+}
+.xtgl1 a {
+	display: inline-block;
+	width: 107px;
+	color: #6983b9;
+}
+.xtgl1 .xtgl1_kh {
+	color: #58a0fd;
+	background: url(../img/data1.png) no-repeat 3px 17px;
+	margin-left: 133px;
+	padding-left: 26px;
+	width: 81px;
+}
+.xtgl1 .xtgl1_kh:hover{
+	background: url(../img/data.png) no-repeat 3px 17px;
+	
+	color: #58a0fd;
+}
+.xtgl1 .xtgl1_kh1 {
+	background: url(../../static/img/data1.png) no-repeat 3px 17px;
+	margin-left: 133px;
+	padding-left: 26px;
+	width: 81px;
+}
+.xtgl1 .xtgl1_xx {
+	background: #C0DAFB url(../../static/img/chart.png) no-repeat 3px 17px;
+	padding-left: 22px;
+}
+.xtgl1 .xtgl1_xx:hover{
+	background: url(../img/char1t.png) no-repeat 3px 17px;
+	color: #58a0fd;
+}
+.xtgl1 .xtgl1_xx1 {
+	background: #C0DAFB url(../../static/img/char1t.png) no-repeat 3px 17px;
+	padding-left: 22px;
+	color: #58a0fd;
+}
+.dall {
+	margin-left: 133px;
+	text-align: center;
+	background: url(../../static/img/data1.png) no-repeat 3px 17px;
+}
+.xtgl .cctive {
+	color: #58a0fd;
+	background: #C0DAFB url(../../static/img/char1t.png) no-repeat 3px 17px;
+}
+.chart {
+	text-align: center;
+	background: url(../../static/img/chart.png) no-repeat 3px 17px;
+}
+.xtgl .mactive {
+	color: #58a0fd;
+	background: #c0dafb url(../../static/img/position1.png) no-repeat 3px 17px;
+}
+.mps {
+	text-align: center;
+	background: url(../../static/img/position.png) no-repeat 3px 17px;
+}
+.xtgl .pactive {
+	color: #58a0fd;
+	background: #c0dafb url(../../static/img/per.png) no-repeat 10px 17px;
+}
+/* asd */
+.ll {
+	display: none;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	background: #c0dafb;
+}
+.ll a {
+	display: inline-block;
+	width: 107px;
+	color: #6983b9;
+}
+.ll .dactive {
+	color: #58a0fd;
+	background: url(../../static/img/data.png) no-repeat 3px 17px;
+}
+.dall {
+	margin-left: 133px;
+	text-align: center;
+	background: url(../../static/img/data1.png) no-repeat 3px 17px;
+}
+.ll .cctive {
+	color: #58a0fd;
+	background: #C0DAFB url(../../static/img/char1t.png) no-repeat 3px 17px;
+}
+.chart {
+	text-align: center;
+	background: url(../../static/img/chart.png) no-repeat 3px 17px;
+}
+.ll .mactive {
+	color: #58a0fd;
+	background: #c0dafb url(../../glory/static/img/position1.png) no-repeat 3px 17px;
+}
+.mps {
+	text-align: center;
+	background: url(../../glory/static/img/position.png) no-repeat 3px 17px;
+}
+.ll .pactive {
+	color: #58a0fd;
+	background: #c0dafb url(./../glory/static/img/per.png) no-repeat 10px 17px;
+}
+.per {
+	position: relative;
+	float: right;
+	margin-right: 73px;
+	text-align: center;
+	background: url(../../static/img/person.png) no-repeat 10px 17px;
+}
+.per ul {
+	display: none;
+	position: absolute;
+	right: -2px;
+	top: 50px;
+	width: 112px;
+	background: #fff;
+}
+.lljl {
+	background: url(../../static/img/browsing1.png) no-repeat 4px 15px;
+}
+.lljl:hover {
+	color: #58a0fd;
+	background: url(../../static/img/browsing.png) no-repeat 4px 15px;
+}
+.djl {
+	background: url(../../static/img/down.png) no-repeat 4px 15px;
+}
+.djl:hover {
+	color: #58a0fd;
+	background: url(../../static/img/down1.png) no-repeat 4px 15px;
+}
+.wpwd {
+	background: url(../../static/img/update.png) no-repeat 4px 15px;
+}
+.wpwd:hover {
+	color: #58a0fd;
+	background: url(../../static/img/xgmm.png) no-repeat 4px 15px;
+}
+.usename {
+	display: inline-block;
+	float: right;
+	text-align: right;
+	width: 160px;
+	height: 100px;
+	line-height: 100px;
+	font-size: 14px;
+	color: #fff;
+}
+.top {
+	display: none;
+	position: fixed;
+	z-index: 10000;
+	right: 10px;
+	bottom: 10px;
+	width: 60px;
+	height: 70px;
+	line-height: 70px;
+	background: url(../../static/img/top.gif) no-repeat 0px 0px;
+	background-size: 60px 70px;
+	border-radius: 3px;
+	text-align: center;
+	cursor: pointer;
+}

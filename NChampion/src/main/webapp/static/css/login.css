@@ -1,0 +1,100 @@
+body{
+	background: url(../img/back.png);
+}
+.contaner{
+	width: 1366px;
+	height: 600px;
+	margin: 0 auto;
+	background: url(../img/map.png) no-repeat;
+	background-position: center 80px;
+}
+.login-box{
+	padding-top:93px;
+	width: 340px;
+	margin: 0 auto;
+	margin-left:511px;
+	text-align: center;
+}
+.login-box .loginbox-title{
+	font-size: 30px;
+	color: #fefefe;
+}
+.login-box .loginbox-head{
+	width: 342px;
+	height: 55px;
+	line-height: 55px;
+	margin-top: 28px;
+	font-size: 18px;
+	color: #72abfd;
+	text-align: center;
+	background: #fff;
+	border-radius: 2.5px;
+}
+.login-box .loginbox-head>p{
+	font-size: 18px;
+}
+.loginbox-info{
+	width: 342px;
+	height:205px;
+	margin-top: 5px;
+	padding-bottom: 10px;
+	background: #fff;
+	border-radius: 2.5px;
+}
+.loginbox-info .login-name,.loginbox-info .login-pwd{
+	width: 300px;
+	height: 33px;
+	padding-left: 10px;
+	border: none;
+	background: #eee;
+}
+.loginbox-info .login-name{
+	margin-top: 25px;
+	margin-bottom: 13px;
+}
+.login-box .login-fpwd{
+	margin-top: 10px;
+	text-align: right;
+	padding-right: 20px;
+}
+.login-box .login-fpwd>a{
+	font-size: 12px;
+	line-height: 12px;
+	text-decoration: underline;
+}
+.login-box .login-sin{
+	width: 300px;
+	height: 33px;
+	margin-top: 25px;
+	background: #549efd;
+	color: #e5eefe;
+	cursor: pointer;
+	border: none;
+	border-radius: 2.5px;
+}
+.login-box .login-register{
+	display: inline-block;
+    width: 140;
+    margin-right: 17px;
+    text-align: right;
+    color: #549efd;
+	
+}
+.login-box .login-res{
+	    width: 120;
+    	text-align: left;
+    	display: inline-block;
+		color: #549efd;
+}
+.login-box .login-register>a{
+	font-size: 12px;
+	line-height: 12px;
+	color: #549efd;
+	text-decoration: underline;
+}
+.err span{
+	float: left;
+	margin-left: 20px;
+	font-size: 12px;
+	color: #f00;
+}

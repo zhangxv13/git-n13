@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.PersonDao">
+	<resultMap type="bean.CropCategory" id="CategoryResult">
+		<id column="id" jdbcType="INTEGER" property="id"/>
+		<result column="crop_category" jdbcType="VARCHAR" property="cropCategory"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<resultMap type="bean.Species" id="SpeciesResult">
+		<id column="crop_sid" jdbcType="INTEGER" property="id"/>
+		<result column="crop_species" jdbcType="VARCHAR" property="cropSpecies"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<resultMap type="bean.Toxin" id="ToixnResult">
+		<id column="txid" jdbcType="INTEGER" property="id"/>
+		<result column="toxin_type" jdbcType="VARCHAR" property="toxintype"/>
+		<result column="state" jdbcType="INTEGER" property="state"/>
+	</resultMap>
+	<resultMap type="bean.Province" id="ProvinceResult">
+		<id column="pid" jdbcType="INTEGER" property="id" />
+		<result column="code" jdbcType="VARCHAR" property="code" />
+		<result column="name" jdbcType="VARCHAR" property="name" />
+		<result column="chinaname" jdbcType="VARCHAR" property="chinaname" />
+	</resultMap>
+	<resultMap type="bean.MpData" id="MapDataResult">
+		<result column="pr" jdbcType="FLOAT" property="num"/>
+		<result column="chinaname" jdbcType="VARCHAR" property="prochina"/>
+	</resultMap>
+	<select id="findcategory" resultMap="CategoryResult">
+		select * from crop_category
+	</select>
+	<select id="findcategorytosi" resultMap="CategoryResult">
+		select distinct c.* from sample_info s,crop_category c where s.crop_categoryid=c.id
+	</select>
+	<select id="findspebyid" resultMap="SpeciesResult">
+		select distinct cs.* from sample_info si,crop_species cs where si.breed=cs.crop_sid and si.crop_categoryid = #{id}
+	</select>
+	<select id="findtoxin" resultMap="ToixnResult">
+		select distinct sti.* from sample_info si,sample_toxin_info sti,sample_toxin st where si.id=st.sample_info_id and st.toxin_id=sti.txid and si.crop_categoryid = #{id}
+	</select>
+	<select id="findyearbyid" resultType="java.lang.String">
+		select distinct year(input_time) from sample_info si where si.crop_categoryid = #{id}
+	</select>
+	<select id="showsearchspecies" resultMap="SpeciesResult">
+			select * from crop_species where crop_sid in 
+		<foreach collection="breeds" item="sp" open="(" close=")" separator="," > 
+			#{sp}
+		</foreach>
+	</select>
+	<select id="showsearchtoxin" resultMap="ToixnResult">
+			select * from sample_toxin_info where txid in 
+		<foreach collection="toxins" item="tx" open="(" close=")" separator="," > 
+			#{tx}
+		</foreach>
+	</select>
+	<select id="showsearchprovince" resultMap="ProvinceResult">
+			select * from address_province where code in 
+		<foreach collection="provinces" item="pro" open="(" close=")" separator="," > 
+			#{pro}
+		</foreach>
+	</select>
+	<select id="selectbymap" resultMap="MapDataResult" >
+		select avg(pollution_rate) pr,chinaname from sample_info si,crop_species cs, address_province ap,sample_toxin_info sti,sample_toxin st
+		where si.id = st.sample_info_id and sti.txid = st.toxin_id and si.breed = cs.crop_sid and si.province = ap.code and sti.txid=#{toxid} 
+		<if test="breed != null ">
+			and si.breed=#{breed} 
+		</if>
+		<if test="year != null">
+		   	and year(si.input_time) = #{year}
+		 </if>
+		 group by province
+	</select>
+</mapper>

@@ -1,0 +1,233 @@
+.contaner{
+	width: 100%;
+	height: 1300px;
+}
+.contaner .im-top{
+	width: 1366px;
+	margin:0 auto ;
+	background: ;
+}
+
+.im-logo>ul{
+	overflow: hidden;
+}
+.im-logo>ul>li{
+	height:62px;
+	float: left;
+}
+.im-top .imtop-logo{
+	width: 237px;
+	font-size: 18px;
+	line-height: 62px;
+	text-align: center;
+	background: #549efd;
+	color: #fff;
+}
+.im-top .imtop-title{
+	width: 911px;
+	padding-left: 87px;
+	line-height: 62px;
+	color: #4f6aa8;
+	background: #e2efff url(../img/im.png) no-repeat 55px 20px;
+}
+.im-top .imtop-exit{
+	width: 71px;
+	line-height: 62px;
+	padding-left: 59px;
+	background: #e2efff url(../img/sinout.png)no-repeat 90px 23px;
+}
+.imtop-exit>a{
+	color: #4f6aa8;
+}
+.im-content{
+	width: 1100px;
+	margin:0 auto;
+}
+.im-heade .imhead-title{
+	margin-top: 19px;
+	margin-bottom: 45px;
+	color: #4f6aa8;
+}
+.imhead-title>a{
+	color: #88b8fd;
+}
+/*妯＄硦鏌�/
+.im-heade .imhead-select{
+	color: #4f6aa8;
+	overflow: hidden;
+}
+.imhead-select lable{
+	margin-right: 5px;
+}
+.imhead-select li{
+	float: left;
+	height: 32px;
+	line-height: 32px;
+}
+.imhead-select input{
+	height: 30px;
+	border: 1px solid #4f6aa8;
+}
+.imhead-select select{
+	height: 30px;
+	border: 1px solid #4f6aa8;
+	
+}
+/*鏍峰搧缂栧彿*/
+.bh{
+	margin-right: 8px;
+}
+/*姹℃煋鐜�/
+.wrl select{
+	width: 61px;
+		background: transparent url(../img/xl.png) no-repeat 45px 10px;
+	
+}
+.mright{
+	margin-right: 15px;
+}
+.w select{
+	width: 110px;
+	background: transparent url(../img/xl.png) no-repeat 90px 10px;
+}
+/*鏃堕棿*/
+.time select{
+	width:69px ;
+	background: transparent url(../img/xl.png) no-repeat 50px 10px;
+}
+/*鍦扮偣*/
+.place {
+	margin-top:19px;
+}
+.place input{
+	width: 110px;
+}
+/*鎼滅储*/
+.soso{
+	width:70px;
+	margin-top: 19px;
+	margin-left: 19px;
+	text-align: center;
+	background: #58a0fd;
+	border-radius: 2.5px;
+}
+.soso>a{
+	display: block;
+	color: #fff;
+}
+/*鎵归噺澶勭悊*/
+
+.im-operation{
+	overflow: hidden;
+	margin-top: 30px;
+	
+}
+.im-operation>li{
+	float: left;
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	margin-right: 10px;
+	background: #58a0fd;
+	border-radius: 2.5px;
+	text-align: center;
+	list-style: none;
+}
+.im-operation a{
+	display: block;
+	color: #fff;
+}
+/*琛ㄦ牸*/
+.w1{
+	width: 106px;
+}
+.w2{
+	width: 111px;
+}
+.w3{
+	width: 185px;
+}
+.w4{
+	width: 100px;
+}
+.w5{
+	width: 138px;
+}
+.w6{
+	width: 116px;
+}
+.w7{
+	width:118px;
+}
+.w8{
+	width:116px;
+}
+.w9{
+	width:114px;
+}
+.im-table{
+	margin-top: 25px; 
+	color: #4f6aa8; 
+}
+.im-table a{
+	color: #58a0fd;
+} 
+.im-table tbody tr{
+	border-top: 3px solid #fff;
+	border-radius: 2.5px;
+}
+.im-table th{
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	background: #58a0fd;
+	color: #fff;
+}
+.im-table td{
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	background: #daeaff;
+}
+/*鍒嗛〉*/
+.im-page{
+	width: 441px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+.im-page li{
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+}
+.im-indexpage{
+	width: 42px;
+	background:#fff;
+}
+.im-nextpage{
+	width: 62px;
+	margin:0 13px;
+	background:#fff;
+}
+.im-pagenum{
+	width: 25px;
+	height: 25px;
+}
+.im-page a{
+	display: block;
+	color: #4f6aa8;
+}
+input{
+	border-radius: 2.5px;
+	background: transparent;
+}
+select{
+	border-radius: 2.5px;
+	appearance: none;
+	outline: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+

@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>无标题文档</title>
+
+<link rel="stylesheet" type="text/css" href="/NChampion/static/css/reset.css"/>
+<link rel="stylesheet" type="text/css" href="/NChampion/static/css/conmen-header.css"/>
+<script src="/NChampion/static/js/jquery-1.11.0.min.js"></script>
+</head>
+<style type="text/css">
+    #mainiframe{max-height:5000px;}
+</style>
+<body>
+<div class="top"></div>
+<div class="hea">中国农产品真菌毒素及产毒真菌污染数据库 </div>
+<div class="titl"><span class="logo"></span>
+ <a class="gl active public" href="javascript:;">系统管理</a>
+ <a class="qx public" href="javascript:;">信息管理</a>
+ <a class="xx public" href="javascript:;">审核管理</a>
+ <a class="gr public" href="javascript:;">数据浏览</a> <a href="javascript:if(confirm('确实要退出吗?'))location='login.html'" class="quit">退出</a><span class="usename">欢迎您：&nbsp;&nbsp;用户名!</span></div>
+
+
+<iframe src="findAllUser" id="mainiframe" width="100%" frameborder="no" border="0" scrolling="no" height="100%"></iframe>
+
+<script type="text/javascript">
+   var oLi=$('.public').length;
+
+    var arr=[
+        './findAllUser',
+        './findAllSample',
+        './findAllUser',
+        './person',
+        ]
+    for(let i=0;i<oLi;i++){
+        $('.public').eq(i).click(function(){
+        $('#mainiframe').attr('src',arr[i])
+        })
+    }
+
+
+  $(".public").click(function(){
+    $(this).addClass("active");
+    $(this).siblings().removeClass("active");
+})
+
+
+            $(function(){
+                //当滚动条的位置处于距顶部100像素以下时，跳转链接出现，否则消失
+                $(function () {
+                    $(window).scroll(function(){
+                        if ($(window).scrollTop()>100){
+                            $(".top").fadeIn(1500);
+                        }
+                        else
+                        {
+                            $(".top").fadeOut(1500);
+                        }
+                    });
+
+                    //当点击跳转链接后，回到页面顶部位置
+                    $(".top").click(function(){
+                        //$('body,html').animate({scrollTop:0},1000);
+                if ($('html').scrollTop()) {
+                        $('html').animate({ scrollTop: 0 }, 1000);
+                        return false;
+                    }
+                    $('body').animate({ scrollTop: 0 }, 1000);
+                         return false;
+                   });
+             });
+        });
+$(window.document).scroll(function(){
+
+if($(window).scrollTop() == $(document).height()-$(window).height()){
+
+var main = $(window.document).find("#mainiframe");
+var thisheight = $(document).height()+1;
+main.height(thisheight);
+}
+});
+    </script>
+<!--<script>
+<script>
+ function reinitIframe(){
+
+            var iframe = document.getElementById("mainiframe");
+
+            try{
+
+                var bHeight = iframe.contentWindow.document.body.scrollHeight;
+
+                var dHeight = iframe.contentWindow.document.documentElement.scrollHeight;
+
+                var height = Math.max(bHeight, dHeight);
+
+                iframe.height =  height;
+
+            }catch (ex){
+
+            }
+
+            };
+
+            window.setInterval("reinitIframe()", 200);
+
+
+</script>
+
+$(function(){
+    var timer;
+    $("#mainiframe").load(function(){
+        if (timer){
+            clearInterval(timer);
+        }
+        //pre_height用于记录上次检查时body的高度
+        //mainheight用于获取本次检查时body的高度，并赋予iframe的高度
+        var mainheight,pre_height;
+        var frame_content = $(this);
+        timer = setInterval(function(){
+            mainheight = frame_content.contents().find("body").height() + 30;
+            if (mainheight != pre_height){
+                pre_height = mainheight;
+                frame_content.height(Math.max(mainheight,350));
+             }
+        },500);//每0.5秒检查一次
+    });
+});
+</script>-->
+ <!--<script type="text/javascript">
+        //iframe自适应高度的函数
+        var oTime = null;
+        function resize() {
+            if (oTime) {
+                clearTimeout(oTime);
+            }
+            oTime = setTimeout(reset, 200);
+        }
+
+        //iframe自适应高度的函数
+        function reset() {
+            var frame = document.getElementById("iframe");
+            var outHeight = frame.offsetHeight;
+            var inHeight = frame.contentWindow.document.body.scrollHeight;
+            if (outHeight < inHeight) {
+                frame.style.height = (inHeight + 10) + "px";
+            }else if(inHeight>650){
+                frame.style.height=(inHeight + 10) + "px";
+            }else{
+                frame.style.height="750px";
+            }
+        }
+        </script>-->
+</body>
+</html>

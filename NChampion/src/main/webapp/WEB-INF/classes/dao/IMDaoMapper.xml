@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.IMDao">
+	<resultMap type="bean.Province" id="ProResultMap">
+		<id column="pid" jdbcType="INTEGER" property="id"/>
+		<result column="code" jdbcType="CHAR" property="code"/>
+		<result column="name" jdbcType="VARCHAR" property="name"/>
+		<result column="chinaname" jdbcType="VARCHAR" property="chinaname"/>
+	</resultMap>
+	<resultMap type="bean.City" id="CityResultMap">
+		<id column="cid" jdbcType="INTEGER" property="id"/>
+		<result column="ccode" jdbcType="CHAR" property="code"/>
+		<result column="cname" jdbcType="VARCHAR" property="name"/>
+		<result column="provinceCode" jdbcType="CHAR" property="provinceCode"/>
+	</resultMap>
+	<resultMap type="bean.Town" id="TownResultMap">
+		<id column="tid" jdbcType="INTEGER" property="id"/>
+		<result column="tcode" jdbcType="CHAR" property="code"/>
+		<result column="tname" jdbcType="VARCHAR" property="name"/>
+		<result column="cityCode" jdbcType="CHAR" property="cityCode"/>
+	</resultMap>
+	<select id="findProvince" resultMap="ProResultMap">
+		select * from address_province
+	</select>
+	<select id="findCity" resultMap="CityResultMap">
+		select * from address_city where provinceCode=#{pcode}
+	</select>
+	<select id="findTown" resultMap="TownResultMap">
+		select * from address_town where cityCode=#{ccode}
+	</select>
+</mapper>

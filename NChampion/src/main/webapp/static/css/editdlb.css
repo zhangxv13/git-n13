@@ -1,0 +1,195 @@
+/*header*/
+.cus-header{
+	width: 100%;
+	height: 62px;
+	min-width: 1100px;
+	background: #e2efff;
+}
+.cus-header div{
+	float: left;
+}
+.cus-header .cus-logo{
+	width: 239px;
+	background: #58a0fd;
+	text-align: center;
+}
+.cus-header .cus-logo a{
+	color: #fff;
+	line-height: 62px;
+	font-size: 18px;
+}
+.cus-header .cus-manage{
+	line-height: 62px;
+	margin-left: 54px;
+}
+.cus-header .cus-manage a,
+.cus-header .cus-quit a{
+	color: #4f6aa8;
+}
+
+.cus-header .cus-quit{
+	float: right;
+	line-height: 62px;
+	margin-right: 25px;
+}
+.cus-header .cus-quit img{
+	vertical-align: -3px;
+}
+/*content*/
+.user-content{
+	width: 1100px;
+	margin: 0 auto;
+	color: #4f6aa8;
+}
+.user-content .user-admin{
+	margin-top: 18px;
+}
+.user-content .user-admin a{
+	color: #4f6aa8;
+}
+.user-content .user-admin a.active{
+	color: #58a0fd;
+}
+.user-content .user-modify-infolist{
+	margin-top: 44px;
+}
+.user-content .user-modify-infolist .user-modify-title{
+	text-align: center;
+	margin-bottom: 27px;
+	font-size: 18px;
+}
+.user-content .user-modify-infolist .modify-list{
+	margin-left: 328px;
+}
+.user-content .user-modify-infolist .modify-list .list-item{
+	margin-bottom: 10px;
+}
+.user-content .user-modify-infolist .modify-list .list-item:last-child{
+	margin-bottom: 0;
+}
+.user-content .user-modify-infolist .modify-list .list-item label{
+	width: 86px;
+	text-align: left;
+	display: inline-block;
+}
+.user-content .user-modify-infolist .modify-list .list-item input{
+	width: 310px;
+	height: 32px;
+	border-radius: 2px;
+	box-sizing: border-box;
+	background: transparent;
+	border: 1px solid #4f6aa8;
+}
+.user-content .user-modify-infolist .modify-list .list-item select{
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 310px;
+	height: 32px;
+	outline: none;
+	border-radius: 2px;
+	border: 1px solid #4f6aa8;
+	background: transparent;
+	background: url(../images/xl.png) no-repeat 288px center;
+}
+.user-content .user-modify-infolist .modify-list .list-item input[type = "radio"]{
+	width: 15px;
+	height: 15px;
+	cursor: pointer;
+	margin-right: 12px;
+	vertical-align: sub;
+}
+.user-content .user-modify-infolist .modify-list .list-item input[type = "radio"]:last-child{
+    margin-left: 20px;
+}
+.user-content .user-modify-infolist .modify-option{
+	margin: 22px;
+	text-align: center;
+}
+.user-content .user-modify-infolist .modify-option a{
+	width: 80px;
+	height: 32px;
+	color: #fff;
+	line-height: 32px;
+	border-radius: 2px;
+	display: inline-block;
+}
+.user-content .user-modify-infolist .modify-option .user-modify{
+	background: #58a0fd;
+	margin-right:68px;
+}
+.user-content .user-modify-infolist .modify-option .modify-back{
+	background: #88abda;
+}
+/*table*/
+.user-content .user-info{
+	width: 100%;
+	text-align: center;
+	margin-top: 18px;
+    margin-bottom: 24px;
+}
+
+.user-content .user-info .info-item{
+	height: 36px;
+	background: #daeaff;
+	display: table-row;
+	border-radius: 2px;
+	border-bottom: 3px solid #f4f9ff;
+}
+
+.user-content .user-info .info-item td:first-child{
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+.user-content .user-info .info-item td:last-child{
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+.user-content .user-info .info-item.info-first td:first-child{
+	border-top-left-radius: 2px;
+}
+.user-content .user-info .info-item.info-first td:last-child{
+	border-top-right-radius: 2px;
+}
+.user-content .user-info .info-item:last-child td:first-child{
+	border-bottom-left-radius: 2px;
+}
+.user-content .user-info .info-item:last-child td:last-child{
+	border-bottom-right-radius: 2px;
+}
+
+.user-content .user-info .info-first{
+	background: #58a0fd;
+	color: #fff;
+}
+.user-content .user-info .info-item:last-child{
+	border: 0px;
+} 
+.user-content .user-info .info-item a{
+	color: #58a0fd;
+}
+.user-content .user-info .info-item .delete::before{
+	content: " | ";
+	color: #58a0fd;
+}
+.addlb{
+	background: #58a0fd;
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 2.5px;
+}
+.addlb a{
+	display: inline-block;
+	background: #58a0fd;
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    border-radius: 2.5px;
+}

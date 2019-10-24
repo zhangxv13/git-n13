@@ -1,0 +1,58 @@
+/*分页*/
+.pageing-con{
+
+	width:1300px;
+	margin: 0 auto;
+	margin-bottom: 25px;
+	margin-top: 5px;
+	
+}
+.pageing-con .pageing-info{
+	width:700px;
+	margin-left:450px ;
+	
+	
+}
+.pageing-con .pageing-info .pageing-item{
+	display: inline-block;
+	line-height: 22px;
+	text-align: center;
+}
+.pageing-con .pageing-info .pageing-item a{
+	color: #4F6AA8;
+	width:22px;
+}
+.pageing-con .pageing-info .pageing-item.prev{
+	margin-right: 10px;
+}
+.pageing-con .pageing-info .pageing-item.next{
+	margin-left: 10px;
+}
+.pageing-con .pageing-info .pageing-item.head, .pageing-con .pageing-info .pageing-item.foot{
+	width:40px; background: white;
+	border-radius: 2px;
+}
+.pageing-con .pageing-info .pageing-item.prev,
+.pageing-con .pageing-info .pageing-item.next
+{
+	width: 60px; height: 22px;
+	background: white;
+	border-radius: 2px;
+	
+}
+.pageing-con .pageing-info .pageing-item.head a,
+.pageing-con .pageing-info .pageing-item.prev a,
+.pageing-con .pageing-info .pageing-item.next a,
+.pageing-con .pageing-info .pageing-item.foot a{
+	color: #4F6AA8;
+}
+.pageing-con .pageing-info .pageing-item.active a{
+	color: #237AE4;
+	display: inline-block;
+	width:22px;
+	border: 1px solid #237AE4;
+}
+.pageing-con .pageing-info .pageing-item.disabled{
+	width: 22px;
+	height: 22px;
+}

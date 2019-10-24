@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NChampion
+Bundle-SymbolicName: NChampion
+Bundle-Version: 1.0.0.qualifier
+Export-Package: bean,
+ controller,
+ dao,
+ service,
+ serviceImpl,
+ util

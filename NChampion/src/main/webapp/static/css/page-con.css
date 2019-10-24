@@ -1,0 +1,52 @@
+.pageing-con{
+	text-align: center;
+	overflow: hidden;
+}
+.pageing-con .pageing-info{
+	display: inline-block;
+	overflow: hidden;
+	background-color: transparent;
+}
+.pageing-con .pageing-info .pageing-item{
+    float: left;
+	line-height: 25px;
+	text-align: center;
+}
+
+.pageing-con .pageing-info .pageing-item.prev,
+.pageing-con .pageing-info .pageing-item.next{
+	margin: 0 12px;
+}
+.pageing-con .pageing-info .pageing-item.head,
+.pageing-con .pageing-info .pageing-item.foot{
+	width: 40px; 
+	height: 25px;
+	background: #fff;
+	border-radius: 2px;
+}
+.pageing-con .pageing-info .pageing-item.prev,
+.pageing-con .pageing-info .pageing-item.next{
+	width: 60px; 
+	height: 25px;
+	background: #fff;
+	border-radius: 2px;
+}
+.pageing-con .pageing-info .pageing-item.head a,
+.pageing-con .pageing-info .pageing-item.prev a,
+.pageing-con .pageing-info .pageing-item.next a,
+.pageing-con .pageing-info .pageing-item.foot a,
+.pageing-con .pageing-info .pageing-item.disabled a{
+	color: #4f6aa8;
+}
+.pageing-con .pageing-info .pageing-item.disabled{
+	width: 26px;
+	height: 25px;
+}
+.pageing-con .pageing-info .pageing-item.active a{
+	color: #58a0fd;
+}
+.pageing-con .pageing-info .pageing-item.disabled.active {
+	box-sizing: border-box;
+	border-radius: 2px;
+	border: 1px solid #58a0fd;
+}

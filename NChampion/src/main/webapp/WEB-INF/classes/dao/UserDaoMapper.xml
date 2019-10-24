@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.UserDao">
+	<resultMap type="bean.User" id="BaseResultMap">
+		<id column="id" jdbcType="INTEGER" property="id" />
+    	<result column="login_name" jdbcType="VARCHAR" property="loginName" />
+    	<result column="username" jdbcType="VARCHAR" property="username"/>
+    	<!-- <result column="" jdbcType="VARCHAR" property="managerName"/> -->
+    	<result column="create_time" jdbcType="DATE" property="createtime"/>
+    	<result column="createpeople" jdbcType="INTEGER" property="createpeople"/>
+    	<result column="state" jdbcType="INTEGER" property="state"/>
+    	<result column="role" jdbcType="INTEGER" property="role"/>
+    	<result column="password" jdbcType="VARCHAR" property="password"/>
+    	<result column="category" jdbcType="VARCHAR" property="category"/>
+    	<result column="area" jdbcType="VARCHAR" property="area"/>
+    	<result column="starttime" jdbcType="DATE" property="starttime"/>
+    	<result column="endtime" jdbcType="DATE" property="endtime"/>
+    	<association property="uc" javaType="bean.User">
+    		<result column="up" jdbcType="VARCHAR" property="createpeople" />
+    	</association>
+    	<association property="roleinfo" javaType="bean.Roles">
+    		<id column="rid" jdbcType="INTEGER" property="rid"/>
+    		<result column="chrole" jdbcType="VARCHAR" property="chrole"/>
+    	</association>
+	</resultMap>
+	<resultMap type="bean.Roles" id="roleResultMap">
+		<id column="rid" jdbcType="INTEGER" property="rid"/>
+		<result column="chrole" jdbcType="VARCHAR" property="chrole"/>
+	</resultMap>
+	<resultMap type="bean.CropCategory" id="cropResultMap">
+		<id column="id" jdbcType="INTEGER" property="id"/>
+		<result column="crop_category" jdbcType="VARCHAR" property="cropCategory"/>
+	</resultMap>
+	<resultMap type="bean.Province" id="provincesResultMap">
+		<id column="pid" jdbcType="INTEGER" property="id"/>
+		<result column="name" jdbcType="VARCHAR" property="name"/>
+	</resultMap>
+	<resultMap type="int" id="flgrid">
+		<id column="rid" jdbcType="INTEGER" property="rid"/>
+	</resultMap>
+	<sql id="sql">
+		select * from
+	</sql>
+<select id="findAllUser" resultMap="BaseResultMap">
+	select u.id,u.login_name,u.username,r.chrole,u.create_time,u1.username as up,u.state,u.starttime,u.endtime from user u,roles r,user u1 where u.role=r.rid and u1.id=u.createpeople
+	<if test="username != null and username != '' ">
+		and u.username like concat('%',#{username},'%')
+	</if>
+</select>
+<delete id="deleteUser">
+	delete from user where id = #{id}
+</delete>
+<select id="addroles" resultMap="roleResultMap">
+	<include refid="sql"/> roles
+</select>
+<select id="addCrops" resultMap="cropResultMap">
+	<include refid="sql"/> crop_category
+</select>
+<select id="addProvinces" resultMap="provincesResultMap">
+	<include refid="sql"/> address_province
+</select>
+<select id="findrid" resultMap="flgrid">
+	 select rid from roles where chrole='信息管理员'
+</select>
+<insert id="addUser" parameterType="bean.User" keyColumn="id" keyProperty="id" useGeneratedKeys="true">
+	insert into user (id,login_name,username,idcard,email,phone,application_time,state,create_time,isdel,password,role,createpeople
+	<if test="category != null and area !=null and starttime!=null and endtime != null">
+		,category,area,starttime,endtime
+	</if>
+	) values(null,#{loginName},#{username},#{idcard},#{email},#{phone},#{applicationtime},#{state},#{createtime},#{isdel},#{password},#{role},#{createpeople}
+	<if test="category != null and area !=null and starttime!=null and endtime != null">
+		,#{category},#{area},#{starttime},#{endtime}
+	</if>
+	)
+</insert>
+<select id="showUpdateUser" resultMap="BaseResultMap">
+	<include refid="sql"/> user u,roles r where u.role=r.rid and u.id = #{id}
+</select>
+<update id="UpdateUser" parameterType="bean.User">
+	update user
+	<set>
+		<if test="loginName != null">
+			login_name = #{loginName},
+		</if>
+		<if test="password != null">
+			password = #{password},
+		</if>
+		<if test="username != null">
+			username = #{username},
+		</if>
+		<if test="state != null">
+			state = #{state},
+		</if>
+		<if test="category != null">
+			category = #{category},
+		</if>
+		<if test="area != null">
+			area = #{area},
+		</if>
+		<if test="starttime != null">
+			starttime = #{starttime},
+		</if>
+		<if test="endtime != null">
+			endtime = #{endtime}
+		</if>
+	</set>
+	where id = #{id}
+</update>
+</mapper>

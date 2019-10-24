@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="dao.IMDao">
+	<resultMap type="bean.SampleInfo" id="sampResultMap">
+		<id column="id" jdbcType="INTEGER" property="id"/>
+		<result column="sample_id" jdbcType="VARCHAR" property="sampleid"/>
+		<result column="sampling_time" jdbcType="DATE" property="samplingTime"/>
+		<result column="input_time" jdbcType="DATE" property="inputtime"/>
+		<result column="pollution_rate" jdbcType="FLOAT" property="pollutionRate"/>
+		<association property="pro" javaType="bean.Province">
+			<id column="pid" jdbcType="INTEGER" property="id"/>
+			<result column="code" jdbcType="CHAR" property="code"/>
+			<result column="name" jdbcType="VARCHAR" property="name"/>
+			<result column="chinaname" jdbcType="VARCHAR" property="chinaname"/>
+		</association>
+		<association property="cit" javaType="bean.City">
+			<id column="cid" jdbcType="INTEGER" property="id"/>
+			<result column="ccode" jdbcType="CHAR" property="code"/>
+			<result column="cname" jdbcType="VARCHAR" property="name"/>
+			<result column="provinceCode" jdbcType="CHAR" property="provinceCode"/>
+		</association>
+		<association property="tw" javaType="bean.Town">
+			<id column="tid" jdbcType="INTEGER" property="id"/>
+			<result column="tcode" jdbcType="CHAR" property="code"/>
+			<result column="tname" jdbcType="VARCHAR" property="name"/>
+			<result column="cityCode" jdbcType="CHAR" property="cityCode"/>
+		</association>
+		<association property="species" javaType="bean.Species">
+			<id column="crop_sid" jdbcType="INTEGER" property="id"/>
+			<result column="crop_species" jdbcType="VARCHAR" property="cropSpecies"/>
+			<result column="crop_category_id" jdbcType="INTEGER" property="catgoryid"/>
+			<result column="state" jdbcType="INTEGER" property="state"/>
+		</association>
+		<collection property="txinfo" ofType="bean.SampleToxin">
+		    <id column="stid" jdbcType="INTEGER" property="id" />
+			 <result column="toxin_id" jdbcType="INTEGER" property="toxinId" />
+			 <result column="toxin_count" jdbcType="REAL" property="toxinCount" />
+			 <result column="sample_info_id" jdbcType="INTEGER" property="sampleInfoId" />
+	    	<association property="toxin" javaType="bean.Toxin">
+		    	 <id column="tid" jdbcType="INTEGER" property="id" />
+			    <result column="toxin_type" jdbcType="VARCHAR" property="toxintype" />
+			    <result column="state" jdbcType="INTEGER" property="state" />
+	    	</association>
+    	</collection>
+	</resultMap>
+	<resultMap type="bean.Province" id="ProResultMap">
+		<id column="pid" jdbcType="INTEGER" property="id"/>
+		<result column="code" jdbcType="CHAR" property="code"/>
+		<result column="name" jdbcType="VARCHAR" property="name"/>
+		<result column="chinaname" jdbcType="VARCHAR" property="chinaname"/>
+	</resultMap>
+	<resultMap type="bean.City" id="CityResultMap">
+		<id column="cid" jdbcType="INTEGER" property="id"/>
+		<result column="ccode" jdbcType="CHAR" property="code"/>
+		<result column="cname" jdbcType="VARCHAR" property="name"/>
+		<result column="provinceCode" jdbcType="CHAR" property="provinceCode"/>
+	</resultMap>
+	<resultMap type="bean.Town" id="TownResultMap">
+		<id column="txid" jdbcType="INTEGER" property="id"/>
+		<result column="tcode" jdbcType="CHAR" property="code"/>
+		<result column="tname" jdbcType="VARCHAR" property="name"/>
+		<result column="cityCode" jdbcType="CHAR" property="cityCode"/>
+	</resultMap>
+	<select id="findProvince" resultMap="ProResultMap">
+		select * from address_province
+	</select>
+	<select id="findCity" resultMap="CityResultMap">
+		select * from address_city where provinceCode=#{pcode}
+	</select>
+	<select id="findTown" resultMap="TownResultMap">
+		select * from address_town where cityCode=#{ccode}
+	</select>
+	<select id="findsiid" resultMap="sampResultMap">
+		select si.id from sample_info si,
+		   address_province ap,address_city ac,address_town at,
+		   crop_species cs 
+		   <if test="toxintype != null and toxintype != ''">
+		 		,sample_toxin_info sti,sample_toxin st
+		 	</if> 
+		    where si.province = ap.code and si.city=ac.ccode
+		   and si.county=at.tcode and si.breed=cs.crop_sid
+		   <if test="toxintype != null and toxintype != ''">
+		 		 and si.id = st.sample_info_id
+		   		and st.toxin_id=sti.txid
+		 	</if> 
+			<if test="sampleid != null and sampleid != ''">
+	 			and si.sample_id like CONCAT('%',#{sampleid},'%')
+	 		</if>
+		    <if test="min != null and min != ''">
+		 		and si.pollution_rate &lt;= #{max} and pollution_rate &gt;= #{min}
+		 	</if>
+		 	 <if test="date != null and date != ''">
+		 		and si.sampling_time LIKE CONCAT('%',#{date},'%')
+		 	</if>
+		 	<if test="province != null and province != ''">
+		 		and si.province = #{province}
+		 	
+		 	</if>
+		 	<if test="city != null and city != ''">
+		 		and si.city = #{city}
+		 	
+		 	</if>
+			<if test="town != null and town != ''">
+		 		and si.county = #{town}
+		 	</if>
+		 	<if test="cropspecies != null and cropspecies != ''">
+		 		and cs.crop_sid = #{cropspecies}
+		 	</if>
+		 	<if test="toxintype != null and toxintype != ''">
+		 		and sti.txid=#{toxintype}
+		 	</if> 
+		 	order by si.id asc
+	</select>
+	<select id="findsimpleinfo" resultMap="sampResultMap">
+		select * from sample_info si,sample_toxin_info sti,sample_toxin st,
+		   address_province ap,address_city ac,address_town at,
+		   crop_species cs where si.province = ap.code and si.city=ac.ccode
+		   and si.county=at.tcode and si.breed=cs.crop_sid and si.id = st.sample_info_id
+		   and st.toxin_id=sti.txid and si.id=#{sid}
+		   <!-- <if test="toxintype != null and toxintype != ''">
+		   		and si.id in (select id from sample_info si,sample_toxin_info sti,sample_toxin st
+		   		where  si.id = st.sample_info_id
+		        and st.toxin_id=sti.txid and sti.txid = #{toxintype})
+		 	</if>  -->
+	</select>
+	<select id="findprovbyid" resultMap="ProResultMap">
+		select distinct ap.* from sample_info si,address_province ap where ap.code = si.province and si.crop_categoryid = #{id}
+	</select>
+	<select id="serachinfo" resultMap="sampResultMap">
+		select distinct si.id from (select * from sample_info si,
+		   address_province ap,address_city ac,address_town at,
+		   crop_species cs where si.province = ap.code and si.city=ac.ccode
+		   and si.county=at.tcode and si.breed=cs.crop_sid) si
+		   left join sample_toxin st on si.id = st.sample_info_id 
+	       left join sample_toxin_info sti on st.toxin_id = sti.txid
+	       left join bacterial_strain_info bsi on si.id = bsi.sample_info_id
+	       where si.crop_categoryid = #{id}
+		   <if test="breeds != null">
+		   		and si.breed in 
+		   		<foreach collection="breeds" item="br" open="(" close=")" separator=",">
+		   			#{br}
+		   		</foreach>
+		   </if>
+		   <if test="provinces != null">
+		   		and si.province in
+		   		<foreach collection="provinces" item="prov" open="(" close=")" separator=",">
+		   			#{prov}
+		   		</foreach>
+		   </if>
+		   <if test="years != null">
+		   		and year(si.input_time) in
+		   		<foreach collection="years" item="y" open="(" close=")" separator=",">
+		   			#{y}
+		   		</foreach>
+		   </if> 
+		   <if test="toxins != null">
+		   		and sti.txid in
+		   		<foreach collection="toxins" item="tx" open="(" close=")" separator=",">
+		   			#{tx}
+		   		</foreach>
+		   </if> 
+		   <if test="pollutions != null">
+		   		and si.pollution_rate between 
+		   		<foreach collection="pollutions" item="pol" separator=" and ">
+		   			#{pol}
+		   		</foreach>
+		   </if>
+	</select>
+</mapper>

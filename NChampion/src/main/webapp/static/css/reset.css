@@ -1,0 +1,65 @@
+html,body,div,span,
+applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,blockquote,pre,
+a,abbr,acronym,address,big,cite,code,
+del,dfn,em,font,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,
+dd,dl,dt,li,ol,ul,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,input{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	font-size: 14px;
+	font-family: Microsoft YaHei;
+}
+
+body{
+	background: #f4f9ff;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+ol,ul {
+	list-style: none;
+}
+q:before,q:after,
+blockquote:before,blockquote:after {
+	content: "";
+}
+img{
+	vertical-align: middle;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+}
+select{
+	color:#4f6aa8;
+}
+.usename{
+	font-size:12px;
+	color: #4f6aa8;
+}
+.hea{
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		font-size: 16px;
+		color: #fff;
+		background: #73b0ff;
+	}
+	.to_top{
+	display:inline-block;
+	position:fixed;
+	bottom:5%;
+	right:10%;
+	width:49px;
+	height:67px;
+	cursor:pointer;
+	background:url("../img/top.gif")
+}
+.zl ul li {
+	float: left;
+}

@@ -1,0 +1,409 @@
+body{min-width:1200px;}
+
+.im-top{
+	width: 100%;
+	margin:0 auto ;
+	min-width: 1100px;
+	overflow: hidden;
+	background:#e2efff ;
+}
+.yu{
+	margin-top:18px;
+}
+.imtop-logo{
+	float: left;
+	width: 237px;
+	font-size: 18px;
+	line-height: 62px;
+	text-align: center;
+	background: #549efd;
+	color: #fff;
+}
+.imtop-title{
+	float: left;
+	line-height: 62px;
+	margin-left: 55px;
+	padding-left: 35px;
+	color: #4f6aa8;
+	background: #e2efff url(../img/im.png) no-repeat 0px 20px;
+}
+.imtop-exit{
+	width: 58px;
+	float: right;
+	margin-right: 30px;
+	line-height: 62px;
+	cursor: pointer;
+}
+.imtop-exit a:active,.imtop-exit a:link,.imtop-exit a:visited{
+	display: block;
+	color: #4f6aa8;
+	background: #e2efff url(../img/sinout.png)no-repeat 35px 23px;
+}
+.imtop-exit a:hover{
+	display: block;
+	color: #88b8fd;
+	background: #e2efff url(../img/sinout1.png)no-repeat 35px 23px;
+}
+
+.contaner{
+	width: 1366px;
+	margin:0 auto ;
+	padding-bottom: 5px;
+
+}
+.im-content{
+	width: 1100px;
+	
+	margin:0 auto;
+}
+.im-heade .imhead-title{
+	padding-top: 18px;
+	margin-bottom: 45px;
+	color: #4f6aa8;
+}
+.imhead-title>a{
+	color: #88b8fd;
+}
+.im-heade .imhead-select{
+	width: 1100px;
+	color: #4f6aa8;
+	overflow: hidden;
+	padding-bottom:5px;
+}
+.imhead-select lable{
+	margin-right: 5px;
+}
+.imhead-select li{
+	float: left;
+	height: 32px;
+	line-height: 32px;
+}
+.imhead-select input{
+	height: 30px;
+	border: 1px solid #4f6aa8;
+}
+.imhead-select select{
+	height: 30px;
+	border: 1px solid #4f6aa8;
+}
+
+
+.bh{
+	margin-right: 8px;
+}
+.bh input{
+	width:185px;
+}
+.wrl select{
+	width: 174px;
+		background: transparent url(../img/xl.png) no-repeat 155px 10px;
+	
+}
+.mright{
+	margin-right: 15px;
+}
+.w select{
+	width: 110px;
+	background: transparent url(../img/xl.png) no-repeat 90px 10px;
+}
+.yu select{
+	width: 141px;
+	background: transparent url(../img/xl.png) no-repeat 122px 10px;
+}
+
+.time{
+	
+}
+.time select{
+	width:110px ;
+	background: transparent url(../img/xl.png) no-repeat 90px 10px;
+}
+
+.place {
+	margin-top:18px;
+}
+.place input{
+	width: 110px;
+}
+
+.soso{
+	width: 70px;
+    height: 33px;
+    display: inline-block;
+    line-height: 33px;
+    vertical-align: middle;
+    float: right;
+	margin-top:-5px;
+    margin-right: 20px;
+	border-radius: 3px;
+    text-align: center;
+    background: #58a0fd;
+
+}
+.soso>a{
+	display:block;
+	color: #fff;
+}
+
+.im-operation{
+	overflow: hidden;
+	margin-top: 30px;
+	
+}
+.im-operation>li{
+	float: left;
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	margin-right: 10px;
+	background: #58a0fd;
+	border-radius: 2.5px;
+	text-align: center;
+	list-style: none;
+}
+ .im-operation a{
+	display: inline-block;
+	color: #fff;
+}
+.im-operation .dr{
+	width: 375px;
+	background: none;
+}
+.dr .xz-btn-b{
+	cursor: pointer;
+	width: 100px;
+	margin-left:0px;
+	background: #58a0fd;
+	border-radius: 3px;
+}
+.dr .file-name-b{
+	width: 200px;
+	cursor: pointer;
+	height: 30px;
+	border: 1px solid #88ABDA;
+}
+.dr .submit-b{
+	display: inline-block;
+	width: 100px;
+    height: 32px;
+    line-height: 30px;
+    background: #58a0fd;
+    color: #fff;
+    border: none;
+    border-radius: 2.5px;
+    text-align: center;
+    list-style: none;
+    cursor: pointer;
+}
+.submit{
+	border: none;
+/*	float: left;*/
+	width: 80px;
+	height: 32px;
+	line-height: 32px;
+	margin-right: 10px;
+	color: #fff;
+	background: #58a0fd;
+	border-radius: 2.5px;
+	text-align: center;
+	list-style: none;
+}
+.w1{
+	width: 106px;
+}
+.w2{
+	width: 111px;
+}
+.w3{
+	width: 185px;
+}
+.w4{
+	width: 100px;
+}
+.w5{
+	width: 138px;
+}
+.w6{
+	width: 116px;
+}
+.w7{
+	width:118px;
+}
+.w8{
+	width:116px;
+}
+.w9{
+	width:114px;
+}
+.im-table{
+	margin-top: 25px; 
+	color: #4f6aa8; 
+}
+.im-table thead input{
+	width: 13px;
+	height: 13px;
+	margin-right: 5px;
+	background:#FFF ;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: 1px solid #fff;	
+}
+.im-table thead input:checked{
+	background: url(../img/check_box.jpg) no-repeat;
+}
+.im-table tbody input{
+	width: 13px;
+	height: 13px;
+	background:#88abda ;
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: 1px solid #88abda;
+}
+.im-table tbody input:checked{
+	background: url(../img/check_box.jpg) no-repeat;
+}
+.im-table a{
+	margin: 0 5px;
+	color: #58a0fd;
+}
+.im-table tbody tr{
+	border-top: 3px solid #fff;
+	border-radius: 2.5px;
+}
+.im-table th{
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	background: #58a0fd;
+	color: #fff;
+}
+
+.im-table td{
+	height: 37px;
+	line-height: 37px;
+	text-align: center;
+	background: #daeaff;
+}
+
+.im-page{
+	width: 441px;
+	overflow: hidden;
+	margin: 0 auto;
+	margin-top: 25px;
+}
+.im-page li{
+	float: left;
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+}
+.im-indexpage{
+	width: 42px;
+	background:#fff;
+}
+.im-nextpage{
+	width: 62px;
+	margin:0 13px;
+	background:#fff;
+}
+.im-pagenum{
+	width: 25px;
+	height: 25px;
+}
+.im-page a{
+	display: block;
+	color: #4f6aa8;
+}
+input{
+	border-radius: 2.5px;
+	background: transparent;
+}
+select::-ms-expand {
+	display: none; 
+}
+select{
+	height: 32px;
+	border-radius: 2.5px;
+	appearance: none;
+	outline: none;
+	background: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+.oper{
+}
+form{
+	display: inline-block;
+	margin-right:10px;
+}
+.oper a{
+	display: inline-block;
+    height: 38px;
+    width:120px;
+    margin-top:25px ;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #58a0fd;
+    border-radius: 2.5px;
+    color: #fff;
+ 	background: #58a0fd;
+}
+.submit-b{
+    height: 38px;
+    width:120px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #58a0fd;
+    border-radius: 2.5px;
+    color: #fff;
+ 	background: #58a0fd;
+ 	cursor: pointer;
+}
+.file-info-b{
+	display: none;
+}
+.dc{
+	margin-right:10px;
+}
+.oper .vall{
+	width: 190px;
+	height: 40px;
+	margin: 0 12px;
+	border: 1px solid #58a0fd;
+    border-radius: 2.5px;
+}
+
+.plsc{
+	margin-top:25px ;
+	
+}
+.btn-top .pl{
+	margin-top:0px;
+	margin-right:10px;
+	background:orange;
+	border:1px solid;
+	border-radius:3px;
+}
+.btn-top{
+	
+}
+.dt{
+	margin-right: 10px;
+}
+.mb{
+	margin-right: 40px;
+}
+.oper .plsc , .oper .dt{
+	margin-left:0px;
+}
+.to_top{
+	display:inline-block;
+	position:fixed;
+	bottom:10%;
+	right:20%;
+	width:49px;
+	height:67px;
+	cursor:pointer;
+}
